@@ -13,11 +13,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://github.com/gosuri/knife-ec2-ssh-config"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files         = %w(
+    lib/chef/knife/ec2_ssh_config_generate.rb
+    lib/knife-ec2-ssh-config/version.rb
+  )
+  
   spec.require_paths = ["lib"]
-
   spec.add_dependency 'fog',           '~> 1.16.0'
 
   spec.add_development_dependency "bundler", "~> 1.3"

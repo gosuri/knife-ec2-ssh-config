@@ -21,7 +21,7 @@ If you are not using bundler, you can install the gem manually. Be sure you are 
 
 ```
 $ gem install chef
-$ gem installknife-ec2-ssh-config
+$ gem install knife-ec2-ssh-config
 ```
 
 Depending on your system's configuration, you may need to run this command with root privileges.
