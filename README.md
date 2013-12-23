@@ -62,18 +62,17 @@ To update your ssh config, simply run:
 $ knife ec2 ssh_config generate
 ```
 
-The above will create a backup of your```~/.ssh/config``` and make the updates
-
-
-You can also include identity file by passing `--identity-file` and ssh user by passing `-i` and `-x` or `--ssh-user` flags. This config can also be set in your `knife.rb`
+The above will create a backup of your```~/.ssh/config``` and make the updates.  You can pass ssh user name by passing `-x` or `--ssh-user` flags. This config can also be set in your `knife.rb`
 
 ```ruby
-knife[:] = ENV['AWS_ACCESS_KEY_ID']
-knife[:aws_secret_access_key] = ENV['AWS_SECRET_ACCESS_KEY']
+knife[:ssh_user] = 'ubuntu'
 ```
 
+You can also include identity file by passing `--identity-file` or `-i` flag, for eg:
 
-
+```
+$ knife ec2 ssh_config generate -i .chef/ssh-key.pem
+```
 
 ## Contributing
 
