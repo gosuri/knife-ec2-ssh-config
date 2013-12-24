@@ -88,7 +88,12 @@ class Chef
         unless @servers
           @servers = {}
           connection.servers.all.each do |server|
-            @servers[server.tags['Name']] = server.dns_name
+            #puts server.inspect
+            if tag = server.tags['Name']
+              unless server.dns_name.nil? || server.dns_name == " " || server.state != "running"
+                @servers[tag] = server.dns_name
+              end
+            end
           end
         end
         @servers
